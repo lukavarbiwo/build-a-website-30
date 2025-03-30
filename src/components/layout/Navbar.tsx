@@ -1,9 +1,24 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Bell } from "lucide-react";
+import { Bell, User, LogOut } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const Navbar = () => {
+  const { user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    await signOut();
+  };
+
   return (
     <header className="border-b">
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
@@ -27,17 +42,37 @@ export const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="text-gray-600 hover:text-gray-900">
-            <Bell size={20} />
-          </button>
-          <div className="hidden sm:flex gap-2">
-            <Link to="/login">
-              <Button variant="outline">შესვლა</Button>
-            </Link>
-            <Link to="/signup">
-              <Button>რეგისტრაცია</Button>
-            </Link>
-          </div>
+          {user ? (
+            <>
+              <button className="text-gray-600 hover:text-gray-900">
+                <Bell size={20} />
+              </button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" className="rounded-full">
+                    <User size={20} />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuLabel>ჩემი ანგარიში</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="cursor-pointer" onClick={handleSignOut}>
+                    <LogOut className="mr-2 h-4 w-4" />
+                    <span>გასვლა</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </>
+          ) : (
+            <div className="hidden sm:flex gap-2">
+              <Link to="/login">
+                <Button variant="outline">შესვლა</Button>
+              </Link>
+              <Link to="/signup">
+                <Button>რეგისტრაცია</Button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </header>

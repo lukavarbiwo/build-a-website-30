@@ -1,11 +1,67 @@
 
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/contexts/AuthContext";
+import { AlertCircle } from "lucide-react";
 
 const Signup = () => {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+  const { user, signUp } = useAuth();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!fullName || !email || !password) {
+      toast({
+        title: "შეცდომა",
+        description: "გთხოვთ შეავსოთ ყველა სავალდებულო ველი",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setIsLoading(true);
+    
+    try {
+      const { error } = await signUp(email, password, fullName);
+      
+      if (error) {
+        toast({
+          title: "რეგისტრაცია ვერ მოხერხდა",
+          description: error.message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "რეგისტრაცია წარმატებულია",
+          description: "თქვენი ანგარიში წარმატებით შეიქმნა",
+        });
+      }
+    } catch (error: any) {
+      toast({
+        title: "რეგისტრაცია ვერ მოხერხდა",
+        description: error?.message || "დაფიქსირდა შეცდომა, სცადეთ თავიდან",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Redirect if user is already logged in
+  if (user) {
+    return <Navigate to="/dashboard" />;
+  }
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
       <div className="w-full max-w-md">
@@ -26,24 +82,46 @@ const Signup = () => {
         </div>
         
         <Card className="p-6">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="space-y-4">
               <div>
                 <Label htmlFor="fullName">სრული სახელი</Label>
-                <Input id="fullName" placeholder="შეიყვანეთ თქვენი სრული სახელი" />
+                <Input 
+                  id="fullName" 
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  placeholder="შეიყვანეთ თქვენი სრული სახელი" 
+                  disabled={isLoading}
+                />
               </div>
               
               <div>
                 <Label htmlFor="email">იმეილი</Label>
-                <Input id="email" type="email" placeholder="შეიყვანეთ თქვენი იმეილი" />
+                <Input 
+                  id="email" 
+                  type="email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="შეიყვანეთ თქვენი იმეილი" 
+                  disabled={isLoading}
+                />
               </div>
               
               <div>
                 <Label htmlFor="password">პაროლი</Label>
-                <Input id="password" type="password" placeholder="შექმენით პაროლი" />
+                <Input 
+                  id="password" 
+                  type="password" 
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="შექმენით პაროლი" 
+                  disabled={isLoading}
+                />
               </div>
               
-              <Button type="submit" className="w-full">ანგარიშის შექმნა</Button>
+              <Button type="submit" className="w-full" disabled={isLoading}>
+                {isLoading ? "მიმდინარეობს..." : "ანგარიშის შექმნა"}
+              </Button>
             </div>
           </form>
         </Card>
