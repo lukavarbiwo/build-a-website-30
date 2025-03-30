@@ -20,7 +20,7 @@ export const AlertItem = ({ title, change, trend }: AlertItemProps) => {
       <div>
         <p className="font-medium">{title}</p>
         <p className={`text-sm ${trend === 'up' ? 'text-green-600' : 'text-red-600'}`}>
-          {trend === 'up' ? 'Improved' : 'Decreased'} by {change}%
+          {trend === 'up' ? 'გაუმჯობესდა' : 'შემცირდა'} {change}%-ით
         </p>
       </div>
     </div>

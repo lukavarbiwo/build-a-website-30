@@ -13,12 +13,12 @@ const Resources = () => {
       <main className="container mx-auto px-4 py-8">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
           <div>
-            <h1 className="text-2xl font-bold">Resource Center</h1>
-            <p className="text-gray-500">Organize, analyze and share your teaching materials</p>
+            <h1 className="text-2xl font-bold">რესურსების ცენტრი</h1>
+            <p className="text-gray-500">დაალაგეთ, გააანალიზეთ და გააზიარეთ თქვენი სასწავლო მასალები</p>
           </div>
           <Button className="flex items-center gap-2">
             <Plus size={18} />
-            <span>Add New Resource</span>
+            <span>ახალი რესურსის დამატება</span>
           </Button>
         </div>
 
@@ -29,7 +29,7 @@ const Resources = () => {
               <path d="m21 21-4.3-4.3"></path>
             </svg>
             <Input 
-              placeholder="Search resources..." 
+              placeholder="რესურსების ძიება..." 
               className="pl-10"
             />
           </div>
@@ -37,61 +37,61 @@ const Resources = () => {
           <div className="flex gap-2">
             <Button variant="outline" className="flex items-center gap-2">
               <Filter size={18} />
-              <span>Category</span>
+              <span>კატეგორია</span>
             </Button>
             <Button variant="outline" className="flex items-center gap-2">
               <Filter size={18} />
-              <span>Type</span>
+              <span>ტიპი</span>
             </Button>
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <ResourceCard 
-            title="Algebra Fundamentals" 
-            type="Mathematics"
+            title="ალგებრის საფუძვლები" 
+            type="მათემატიკა"
             color="blue"
-            date="2023 March 15"
+            date="2023 მარტი 15"
             downloads={128}
             icon={<FileText size={48} />}
           />
           <ResourceCard 
-            title="Photosynthesis Diagram" 
-            type="Biology"
+            title="ფოტოსინთეზის დიაგრამა" 
+            type="ბიოლოგია"
             color="purple"
-            date="2023 February 22"
+            date="2023 თებერვალი 22"
             downloads={89}
             icon={<ImageIcon size={48} />}
           />
           <ResourceCard 
-            title="Literary Analysis Guide" 
-            type="English"
+            title="ლიტერატურული ანალიზის გზამკვლევი" 
+            type="ქართული"
             color="orange"
-            date="2023 April 3"
+            date="2023 აპრილი 3"
             downloads={201}
             icon={<FileText size={48} />}
           />
           <ResourceCard 
-            title="Physics Practice Problems" 
-            type="Physics"
+            title="ფიზიკის სავარჯიშოები" 
+            type="ფიზიკა"
             color="green"
-            date="2023 January 12"
+            date="2023 იანვარი 12"
             downloads={156}
             icon={<FileText size={48} />}
           />
           <ResourceCard 
-            title="World War II Video" 
-            type="History"
+            title="მეორე მსოფლიო ომის ვიდეო" 
+            type="ისტორია"
             color="cyan"
-            date="2023 March 28"
+            date="2023 მარტი 28"
             downloads={73}
             icon={<Video size={48} />}
           />
           <ResourceCard 
-            title="Grammar Worksheets" 
-            type="English"
+            title="გრამატიკის სამუშაო ფურცლები" 
+            type="ქართული"
             color="pink"
-            date="2023 April 10"
+            date="2023 აპრილი 10"
             downloads={119}
             icon={<FileText size={48} />}
           />

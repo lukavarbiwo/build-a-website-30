@@ -12,27 +12,27 @@ const Dashboard = () => {
       <Navbar />
       
       <main className="container mx-auto px-4 py-8">
-        <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
-        <p className="text-gray-500 mb-8">Welcome back! Here's what's happening today.</p>
+        <h1 className="text-2xl font-bold mb-2">მართვის პანელი</h1>
+        <p className="text-gray-500 mb-8">კეთილი იყოს თქვენი დაბრუნება! აი, რა ხდება დღეს.</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <StatCard 
-            title="Resources" 
+            title="რესურსები" 
             value="128" 
             icon={<BookOpen size={24} className="text-blue-500" />} 
           />
           <StatCard 
-            title="Assignments" 
+            title="დავალებები" 
             value="42" 
             icon={<FileText size={24} className="text-orange-500" />} 
           />
           <StatCard 
-            title="Students" 
+            title="მოსწავლეები" 
             value="96" 
             icon={<Users size={24} className="text-purple-500" />} 
           />
           <StatCard 
-            title="Insights" 
+            title="ანალიტიკა" 
             value="12" 
             icon={<BarChart2 size={24} className="text-cyan-500" />} 
           />
@@ -43,32 +43,32 @@ const Dashboard = () => {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <BookOpen size={20} className="text-blue-500" />
-                <h2 className="text-xl font-bold">Recent Resources</h2>
+                <h2 className="text-xl font-bold">ბოლო რესურსები</h2>
               </div>
-              <p className="text-sm text-gray-500">Your most recently accessed teaching materials</p>
+              <p className="text-sm text-gray-500">თქვენი ბოლოს გამოყენებული სასწავლო მასალები</p>
             </div>
             
             <div className="divide-y">
               <ResourceItem 
-                title="Algebra Fundamentals" 
-                type="Worksheet" 
-                timeLabel="Today" 
+                title="ალგებრის საფუძვლები" 
+                type="სამუშაო ფურცელი" 
+                timeLabel="დღეს" 
               />
               <ResourceItem 
-                title="Solar System Quiz" 
-                type="Assessment" 
-                timeLabel="Yesterday" 
+                title="მზის სისტემის ქვიზი" 
+                type="შეფასება" 
+                timeLabel="გუშინ" 
               />
               <ResourceItem 
-                title="Literary Devices PowerPoint" 
-                type="Presentation" 
-                timeLabel="3 days ago" 
+                title="ლიტერატურული ხერხების პრეზენტაცია" 
+                type="პრეზენტაცია" 
+                timeLabel="3 დღის წინ" 
               />
             </div>
 
             <div className="mt-4">
               <Link to="/resources" className="text-blue-500 text-sm hover:underline">
-                View All Resources
+                ყველა რესურსის ნახვა
               </Link>
             </div>
           </div>
@@ -77,29 +77,29 @@ const Dashboard = () => {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <FileText size={20} className="text-orange-500" />
-                <h2 className="text-xl font-bold">Upcoming Tasks</h2>
+                <h2 className="text-xl font-bold">მომავალი დავალებები</h2>
               </div>
-              <p className="text-sm text-gray-500">Tasks and deadlines on your schedule</p>
+              <p className="text-sm text-gray-500">თქვენი განრიგის დავალებები და ვადები</p>
             </div>
             
             <div className="divide-y">
               <TaskItem 
-                title="Grade 10th Grade Essays" 
-                dueDate="Today, 5:00 PM" 
+                title="მე-10 კლასის ესეების შეფასება" 
+                dueDate="დღეს, 17:00" 
               />
               <TaskItem 
-                title="Create Physics Quiz" 
-                dueDate="Tomorrow, 9:00 AM" 
+                title="ფიზიკის ქვიზის შექმნა" 
+                dueDate="ხვალ, 09:00" 
               />
               <TaskItem 
-                title="Department Meeting" 
-                dueDate="Wed, 3:30 PM" 
+                title="დეპარტამენტის შეხვედრა" 
+                dueDate="ოთხ, 15:30" 
               />
             </div>
 
             <div className="mt-4">
               <Link to="/tasks" className="text-orange-500 text-sm hover:underline">
-                View All Tasks
+                ყველა დავალების ნახვა
               </Link>
             </div>
           </div>

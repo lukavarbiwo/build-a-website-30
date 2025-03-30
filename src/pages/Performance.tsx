@@ -8,18 +8,18 @@ import { Card } from "@/components/ui/card";
 
 const Performance = () => {
   const subjectData = [
-    { name: 'Math', value: 82 },
-    { name: 'English', value: 89 },
-    { name: 'Science', value: 76 },
-    { name: 'History', value: 85 },
-    { name: 'Languages', value: 73 },
+    { name: 'მათემატიკა', value: 82 },
+    { name: 'ქართული', value: 89 },
+    { name: 'საბუნებისმეტყველო', value: 76 },
+    { name: 'ისტორია', value: 85 },
+    { name: 'უცხო ენები', value: 73 },
   ];
 
   const distributionData = [
-    { name: 'Excellent', value: 35, color: '#4ade80' },
-    { name: 'Good', value: 45, color: '#4766ff' },
-    { name: 'Average', value: 15, color: '#ffb246' },
-    { name: 'Needs Help', value: 5, color: '#ff4d6e' },
+    { name: 'ფრიადი', value: 35, color: '#4ade80' },
+    { name: 'კარგი', value: 45, color: '#4766ff' },
+    { name: 'საშუალო', value: 15, color: '#ffb246' },
+    { name: 'დამაკმაყოფილებელი', value: 5, color: '#ff4d6e' },
   ];
 
   return (
@@ -27,24 +27,24 @@ const Performance = () => {
       <Navbar />
       
       <main className="container mx-auto px-4 py-8">
-        <h1 className="text-2xl font-bold mb-2">Performance Tracker</h1>
-        <p className="text-gray-500 mb-8">Track student progress and identify improvement opportunities</p>
+        <h1 className="text-2xl font-bold mb-2">შედეგების ტრეკერი</h1>
+        <p className="text-gray-500 mb-8">თვალყური ადევნეთ მოსწავლეთა პროგრესს და განსაზღვრეთ გაუმჯობესების შესაძლებლობები</p>
 
         <div className="flex flex-wrap gap-4 mb-8">
-          <Button variant="outline" className="bg-white">By Subject</Button>
-          <Button variant="outline" className="bg-white">By Class</Button>
+          <Button variant="outline" className="bg-white">საგნების მიხედვით</Button>
+          <Button variant="outline" className="bg-white">კლასების მიხედვით</Button>
         </div>
 
         <div className="mb-8">
           <ChartSection 
-            title="Subject Performance Overview"
+            title="საგნების შედეგების მიმოხილვა"
             data={subjectData}
           />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <DistributionChart 
-            title="Student Distribution"
+            title="მოსწავლეთა განაწილება"
             data={distributionData}
           />
 
@@ -55,22 +55,22 @@ const Performance = () => {
                 <line x1="12" y1="9" x2="12" y2="13"/>
                 <line x1="12" y1="17" x2="12.01" y2="17"/>
               </svg>
-              <h2 className="text-xl font-bold">Performance Alerts</h2>
+              <h2 className="text-xl font-bold">შედეგების შეტყობინებები</h2>
             </div>
             
             <div>
               <AlertItem
-                title="Attendance in Class 9B"
+                title="დასწრება 9ბ კლასში"
                 change={8}
                 trend="down"
               />
               <AlertItem
-                title="Math scores in Class 10A"
+                title="მათემატიკის ქულები 10ა კლასში"
                 change={12}
                 trend="up"
               />
               <AlertItem
-                title="Reading in Class 11A"
+                title="კითხვა 11ა კლასში"
                 change={6}
                 trend="down"
               />

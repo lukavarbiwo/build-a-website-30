@@ -9,7 +9,7 @@ const NotFound = () => {
 
   useEffect(() => {
     console.error(
-      "404 Error: User attempted to access non-existent route:",
+      "404 შეცდომა: მომხმარებელმა სცადა არ არსებული გვერდის ნახვა:",
       location.pathname
     );
   }, [location.pathname]);
@@ -25,9 +25,9 @@ const NotFound = () => {
           </svg>
         </div>
         <h1 className="text-6xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-8">The page you are looking for doesn't exist.</p>
+        <p className="text-xl text-gray-600 mb-8">თქვენ მიერ მოთხოვნილი გვერდი არ არსებობს.</p>
         <Button asChild size="lg">
-          <Link to="/">Return to Home</Link>
+          <Link to="/">მთავარ გვერდზე დაბრუნება</Link>
         </Button>
       </div>
     </div>

@@ -21,7 +21,7 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/dashboard" className="text-gray-600 hover:text-gray-900">დაფა</Link>
+          <Link to="/dashboard" className="text-gray-600 hover:text-gray-900">მთავარი</Link>
           <Link to="/resources" className="text-gray-600 hover:text-gray-900">რესურსები</Link>
           <Link to="/performance" className="text-gray-600 hover:text-gray-900">შედეგები</Link>
         </div>
