@@ -21,9 +21,9 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/dashboard" className="text-gray-600 hover:text-gray-900">Dashboard</Link>
-          <Link to="/resources" className="text-gray-600 hover:text-gray-900">Resources</Link>
-          <Link to="/performance" className="text-gray-600 hover:text-gray-900">Performance</Link>
+          <Link to="/dashboard" className="text-gray-600 hover:text-gray-900">დაფა</Link>
+          <Link to="/resources" className="text-gray-600 hover:text-gray-900">რესურსები</Link>
+          <Link to="/performance" className="text-gray-600 hover:text-gray-900">შედეგები</Link>
         </div>
 
         <div className="flex items-center gap-4">
@@ -32,10 +32,10 @@ export const Navbar = () => {
           </button>
           <div className="hidden sm:flex gap-2">
             <Link to="/login">
-              <Button variant="outline">Log In</Button>
+              <Button variant="outline">შესვლა</Button>
             </Link>
             <Link to="/signup">
-              <Button>Sign Up</Button>
+              <Button>რეგისტრაცია</Button>
             </Link>
           </div>
         </div>

@@ -16,7 +16,7 @@ export const TaskItem = ({ title, dueDate }: TaskItemProps) => {
         </div>
         <div>
           <p className="font-medium">{title}</p>
-          <p className="text-sm text-gray-500">Due: {dueDate}</p>
+          <p className="text-sm text-gray-500">ვადა: {dueDate}</p>
         </div>
       </div>
       <Button variant="ghost" size="icon">

@@ -21,38 +21,38 @@ const Signup = () => {
             <span className="text-xl font-bold">EduFlow</span>
           </Link>
           
-          <h1 className="text-3xl font-bold mb-2">Create your account</h1>
-          <p className="text-gray-500">Get started with your free account</p>
+          <h1 className="text-3xl font-bold mb-2">შექმენით თქვენი ანგარიში</h1>
+          <p className="text-gray-500">დაიწყეთ თქვენი უფასო ანგარიშით</p>
         </div>
         
         <Card className="p-6">
           <form>
             <div className="space-y-4">
               <div>
-                <Label htmlFor="fullName">Full Name</Label>
-                <Input id="fullName" placeholder="Enter your full name" />
+                <Label htmlFor="fullName">სრული სახელი</Label>
+                <Input id="fullName" placeholder="შეიყვანეთ თქვენი სრული სახელი" />
               </div>
               
               <div>
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="Enter your email" />
+                <Label htmlFor="email">იმეილი</Label>
+                <Input id="email" type="email" placeholder="შეიყვანეთ თქვენი იმეილი" />
               </div>
               
               <div>
-                <Label htmlFor="password">Password</Label>
-                <Input id="password" type="password" placeholder="Create a password" />
+                <Label htmlFor="password">პაროლი</Label>
+                <Input id="password" type="password" placeholder="შექმენით პაროლი" />
               </div>
               
-              <Button type="submit" className="w-full">Create Account</Button>
+              <Button type="submit" className="w-full">ანგარიშის შექმნა</Button>
             </div>
           </form>
         </Card>
         
         <div className="text-center mt-6">
           <p className="text-gray-600">
-            Already have an account?{" "}
+            უკვე გაქვთ ანგარიში?{" "}
             <Link to="/login" className="text-blue-500 hover:underline">
-              Log in
+              შესვლა
             </Link>
           </p>
         </div>
