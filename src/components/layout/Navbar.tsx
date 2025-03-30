@@ -19,6 +19,9 @@ export const Navbar = () => {
     await signOut();
   };
 
+  // Get the user's name from metadata
+  const userName = user?.user_metadata?.full_name || "მომხმარებელი";
+
   return (
     <header className="border-b">
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
@@ -49,7 +52,8 @@ export const Navbar = () => {
               </button>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon" className="rounded-full">
+                  <Button variant="ghost" size="icon" className="rounded-full flex items-center gap-2 px-3">
+                    <span className="hidden sm:inline font-medium">{userName}</span>
                     <User size={20} />
                   </Button>
                 </DropdownMenuTrigger>
